@@ -1,4 +1,5 @@
-/* 
+package uis.stockapp;
+/*
  * CSC 478 Capstone
  * HedgeFundHackers
  * Bank Class
