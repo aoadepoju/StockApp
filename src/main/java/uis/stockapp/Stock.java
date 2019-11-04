@@ -1,4 +1,5 @@
-/* 
+package uis.stockapp;
+/*
  * CSC 478 Capstone
  * HedgeFundHackers
  * Stock Class
@@ -28,7 +29,7 @@ public class Stock {
 			DecimalFormat df = new DecimalFormat("#.00");
 			
 	//Default constructor for the Stock class with attributes of a Stock object
-			public Stock(String stockName, String stockSymbol, String stockDescript, String stockExch, double currPrice, double openPrice, 
+			public Stock(String stockName, String stockSymbol, String stockDescript, String stockExch, double currPrice, double openPrice,
 					double closePrice, double yearHigh, double yearLow, double dayChange, double ytdChange, double profitLoss, String stockSector) {
 				//create attributes for Stock
 				super();
@@ -46,8 +47,12 @@ public class Stock {
 				this.profitLoss = profitLoss;
 				this.stockSector = stockSector;
 				} //constructor
-			
-			//Accessors and mutators for stock object traits.
+
+	public Stock() {
+
+	}	//No argument constructor
+
+	//Accessors and mutators for stock object traits.
 			
 			//NAME ATTRIBUTE
 			public String getStockName() {
@@ -92,21 +97,29 @@ public class Stock {
 			//CURRENT PRICE ATTRIBUTE
 			public double getCurrPrice() {
 				return Double.parseDouble(df.format(currPrice));
-				//return currPrice;
 			}//accessor for current price
 			
 			public void setCurrPrice(double newCurrPrice) {
 				this.currPrice = Double.parseDouble(df.format(newCurrPrice));
 			}//mutator for current price
 			
-			
+
+			//PURCHASE PRICE ATTRIBUTE
+			public double getPurchPrice(){
+				return Double.parseDouble(df.format(purchPrice));
+			}//accessor for purchase price
+
+			public void setPurchPrice(double purchPrice){
+				this.purchPrice = Double.parseDouble(df.format(purchPrice));
+			}//mutator for purchase price
+
+
 			//OPEN PRICE ATTRIBUTE
 			public double getOpenPrice() {
 				return Double.parseDouble(df.format(openPrice));
-				//return openPrice;
 			}//accessor for open price
 			
-			public void setOpenPrice(String newOpenPrice) {
+			public void setOpenPrice(double newOpenPrice) {
 				this.openPrice = Double.parseDouble(df.format(newOpenPrice));
 			}//mutator for open price
 			
@@ -114,7 +127,6 @@ public class Stock {
 			//CLOSE PRICE ATTRIBUTE
 			public double getClosePrice() {
 				return Double.parseDouble(df.format(closePrice));
-				//return closePrice;
 			}//accessor for close price
 			
 			public void setClosePrice(double newClosePrice) {
@@ -135,7 +147,6 @@ public class Stock {
 			//YEAR LOW ATTRIBUTE
 			public double getYearLow() {
 				return Double.parseDouble(df.format(yearLow));
-				//return yearLow;
 			}//accessor for year low
 			
 			public void setYearLow(double newYearLow) {
@@ -146,7 +157,6 @@ public class Stock {
 			//DAY CHANGE ATTRIBUTE
 			public double getDayChange() {
 				return Double.parseDouble(df.format(dayChange));
-				//return dayChange;
 			}//accessor for day change
 			
 			public void setDayChange(double newDayChange) {
@@ -157,7 +167,6 @@ public class Stock {
 			//YEAR-TO-DATE CHANGE ATTRIBUTE
 			public double getYtdChange() {
 				return Double.parseDouble(df.format(ytdChange));
-				//return ytdChange;
 			}//accessor for ytd change
 			
 			public void setYtdChange(double newYtdChange) {
@@ -177,13 +186,22 @@ public class Stock {
 			
 			//STOCK SECTOR ATTRIBUTE
 			public String getStockSector() {
-				// TODO Auto-generated method stub
 				return stockSector;
 			}//accessor for stock sector
 			
 			public void setStockSector(String newStockSector) {
 				this.stockSector = newStockSector;
 			}//mutator for stock sector
+
+
+			//NUMBER OF SHARES ATTRIBUTE
+			public int getNumOfShares(){
+				return numOfShares;
+			}//accessor for number of shares
+
+			public void setNumOfShares(int numOfShares){
+				this.numOfShares = numOfShares;
+			}//mutator for number of shares
 			
 			
 			//TO STRING METHOD
