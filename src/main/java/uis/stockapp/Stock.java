@@ -12,7 +12,7 @@ public class Stock {
 	// Declare instance variables here
 			private String stockName = "";
 			private String stockSymbol = "";
-			private String stockDescript = "";
+			private String stockDescript = "";		//Maybe too long to keep
 			private String stockExch = "";
 			private double currPrice = 0.0;
 			private double purchPrice = 0.0;
@@ -212,6 +212,7 @@ public class Stock {
 		    	    	stockDescript,
 						stockExch,
 						currPrice,
+						purchPrice,
 						openPrice,
 						closePrice,
 						yearHigh,
@@ -219,7 +220,8 @@ public class Stock {
 						dayChange,
 						ytdChange,
 						profitLoss,
-						stockSector);
+						stockSector,
+                        numOfShares);
 				
 				
 				
