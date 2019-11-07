@@ -9,10 +9,11 @@ public class User {
 	// Declare instance variables here
 				private String firstName = "";
 				private String lastName = "";
-				ArrayList<Bank> userBank = new ArrayList<Bank>();
-				//ArrayList<Portfolio> userPortfolio = new ArrayList<Portfolio>();
-				ArrayList<String> userName = new ArrayList<String>();
-				
+				private double userBank = 0;
+                private double bankBalance = 0;
+                String userName = "";
+                Portfolio userPortfolio = null;
+
 				//DecimalFormat df = new DecimalFormat("#.00");
 				
 		//Default constructor for the Stock class with attributes of a Stock object
@@ -21,8 +22,9 @@ public class User {
 					super();
 					this.firstName = first;
 					this.lastName = last;
-					this.userBank = bank;
-					//this.userPortfolio = portfolio;
+					this.userName = firstName + lastName;
+					//this.userBank = bank;
+					this.userPortfolio = new Portfolio(userName, 0);
 				} //constructor
 				
 				//Accessors and mutators for stock object traits.
@@ -46,15 +48,11 @@ public class User {
 				}//mutator for user last name
 				
 				//USERNAME ATTRIBUTE
-				public ArrayList<String> getUserName() {
-					
-					userName.add(firstName);
-					userName.add(lastName);
-					
+				public String getUserName() {
 					return userName;
 				}//accessor for username
 				
-				public void setUserName(ArrayList<String> newUserName) {
+				public void setUserName(String newUserName) {
 					this.userName = newUserName;
 				}//mutator for username
 				

@@ -6,6 +6,7 @@
 
 package uis.stockapp;
 
+import java.io.*;
 import java.util.ArrayList;
 
 public class Portfolio{
@@ -26,12 +27,46 @@ public class Portfolio{
 
     }//no argument constructor
 
+    //Objects for input/output
+    DataOutputStream dos;
+    DataInputStream dis;
+    File save = new File(name + ".dat");
     //Methods to save and load portfolio file
-    public void savePortfolio(){
-        //TODO
+    public String savePortfolio(ArrayList<Stock> stockList) {
+        try{
+            dos = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(save)));
+            for(Stock stock : stockList){
+                s = stock;
+                dos.writeUTF(s.getStockName());
+                dos.writeUTF(s.getStockSymbol());
+                dos.writeUTF(s.getStockExch());
+                dos.writeDouble(s.getPurchPrice());
+                dos.writeInt(s.getNumOfShares());
+            }
+            dos.close();
+        }catch(IOException e){
+            return "Unable to save";
+        }
+        return "Save Succesful";
     }
-    public void loadPortfolio(){
-        //TODO
+    public String loadPortfolio(){
+        try{
+            dis = new DataInputStream(new BufferedInputStream(new FileInputStream(save)));
+            while(dis.available() != 0){
+                s = new Stock();
+                s.setStockName(dis.readUTF());
+                s.setStockSymbol(dis.readUTF());
+                s.setStockExch(dis.readUTF());
+                s.setPurchPrice(dis.readDouble());
+                s.setNumOfShares(dis.readInt());
+                stockList.add(s);
+            }
+            dis.close();
+            //TODO call to update method that would iterate over portfolio to update rest of data to most recent api pull
+        }catch(IOException e){
+            return "Unable to load";
+        }
+        return "Load Successful";
     }
 
     //Methods to add and remove stock from stockList
