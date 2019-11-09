@@ -1,4 +1,4 @@
-package uis.stockapp;
+package uis.stockapp.model;
 /*
  * CSC 478 Capstone
  * HedgeFundHackers

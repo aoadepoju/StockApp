@@ -4,7 +4,7 @@
  * Porfolio class
  */
 
-package uis.stockapp;
+package uis.stockapp.model;
 
 import java.io.*;
 import java.util.ArrayList;

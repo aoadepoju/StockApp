@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="310.0" style="-fx-background-color: #2c344b;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="uis.stockapp.controller.LoginController">
+  <children>
+    <AnchorPane id="anchorRoot" layoutX="0.0" layoutY="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="312.0" style="-fx-background-color: #2c344b;">
+      <children>
+        <AnchorPane layoutY="419.0" prefHeight="48.0" prefWidth="312.0" style="-fx-background-color: #43bb73;">
+          <children>
+            <Label fx:id="mainButton" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="0.0" maxWidth="312.0" onMouseClicked="#loginUser" prefHeight="48.0" prefWidth="312.0" style="-fx-cursor: hand;" text="Login" textAlignment="LEFT">
+              <font>
+                <Font size="17.0" fx:id="x6" />
+              </font>
+              <textFill>
+                <Color blue="0.996" green="0.996" red="0.996" fx:id="x1" />
+              </textFill>
+            </Label>
+          </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="48.0" prefWidth="310.0" style="-fx-background-color: #2e354f;">
+          <children>
+            <Label layoutX="131.0" layoutY="14.0" text="StockWorld">
+              <font>
+                <Font size="14.0" fx:id="x4" />
+              </font>
+              <textFill>
+                <Color blue="0.702" green="0.565" red="0.549" fx:id="x5" />
+              </textFill>
+            </Label>
+          </children>
+        </AnchorPane>
+        <Label id="login" fx:id="button" font="$x4" layoutX="89.0" layoutY="379.0" onMouseClicked="#fadeIn" style="-fx-cursor: hand;" text="or Create new profile" textFill="$x5" wrapText="false" />
+        <Label alignment="CENTER" layoutX="75.0" layoutY="89.0" prefHeight="62.0" prefWidth="92.0" text="Stock" textFill="$x5">
+          <font>
+            <Font name="Century Gothic Bold" size="25.0" />
+          </font>
+        </Label>
+        <Label alignment="CENTER" layoutX="147.0" layoutY="89.0" prefHeight="62.0" prefWidth="91.99990000000253" text="World" textFill="$x5">
+          <font>
+            <Font name="Century Gothic" size="25.0" />
+          </font>
+        </Label>
+        <Label alignment="CENTER_RIGHT" layoutX="75.0" layoutY="128.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Trade your stock with us">
+          <font>
+            <Font name="Century Gothic" size="9.0" />
+          </font>
+          <textFill>
+            <Color blue="0.451" green="0.733" red="0.263" fx:id="x8" />
+          </textFill>
+        </Label>
+        <TextField id="lastName" fx:id="userName" layoutX="20.0" layoutY="222.0" prefHeight="42.0" prefWidth="270.0" promptText="youemail@stock.com" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
+        <Label alignment="CENTER_LEFT" layoutX="20.0" layoutY="191.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Username" textFill="$x8">
+          <font>
+            <Font name="Century Gothic" size="12.0" fx:id="x9" />
+          </font>
+        </Label>
+        <Label alignment="CENTER_LEFT" font="$x9" layoutX="21.0" layoutY="278.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Password" textFill="$x8" />
+        <PasswordField fx:id="password" layoutX="19.0" layoutY="302.0" prefHeight="42.0" prefWidth="270.0" promptText="Password" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
+        <Label fx:id="errorMessage" alignment="CENTER" contentDisplay="CENTER" font="$x6" layoutX="5.0" layoutY="353.0" minHeight="19.0" prefHeight="24.0" prefWidth="301.0" style="-fx-cursor: hand;" text="" textAlignment="LEFT" textFill="$x1" />
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>
