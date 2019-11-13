@@ -56,7 +56,7 @@
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
                <content>
-                  <TableView prefHeight="196.0" prefWidth="706.0">
+                  <TableView prefHeight="196.0" prefWidth="704.0">
                     <columns>
                       <TableColumn prefWidth="74.0" text="Stock Name" />
                       <TableColumn prefWidth="57.0" text="Symbol" />
