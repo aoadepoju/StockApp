@@ -12,59 +12,65 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import uis.stockapp.dto.SingleStockDTO;
 import uis.stockapp.dto.StockResponseDTO;
+import uis.stockapp.dto.StockSymbolDTO;
 
-public class DemoAPICall {
+public class StockAPICall {
 	
 	private static final Logger logger = LogManager.getLogger();
 
 	
-	public void fetchDataFromSanboxAPI() {
+	
+	public List<StockSymbolDTO> fetchSymbolFromAPI() {
 		try {
 			
-			String url="https://sandbox.iexapis.com/stable/stock/market/batch?symbols=aapl,fb,goog&types=quote,chart&range=1m&last=1&token=Tpk_1c095a89eeea47339f8f9b530276818d";
+			String url="https://cloud.iexapis.com/beta/ref-data/symbols?filter=symbol,name,exchange&token=pk_f2ef8ff533a14e56994e437f4da5cc2a";
 			
 			//Calling API
 			ResponseEntity<String> responseEntity = new RestTemplate().getForEntity(url, String.class);
 			
 			//Casting it into java object
-			Map<String, StockResponseDTO> map = new ObjectMapper().readValue(responseEntity.getBody(), Map.class);
+			List<StockSymbolDTO> map = new ObjectMapper().readValue(responseEntity.getBody(), new TypeReference<List<StockSymbolDTO>>(){});
 		
-			
+			return map;
 		} catch (IOException e) {
-			logger.info(">>>>>>>>>>>> EXCEPTION >>>>>>>>> :: fetchDataFromSandboxAPI :: ");
+			logger.info(">>>>>>>>>>>> EXCEPTION >>>>>>>>> :: fetchSymbolFromAPI :: ");
 			logger.info(">>>>>>>>>>>> MESSAGE >>>>>>>>> "+ e.getLocalizedMessage());
 			logger.info(">>>>>>>>>>>> END");
 			e.printStackTrace();
+			return null;
 		}
 		
 	}
-	public void fetchDataFromSanboxAPI_2() {
+	public SingleStockDTO fetchStockInfo(String stockSymbol) {
 		try {
 			
-			String url="https://sandbox.iexapis.com/stable/stock/market/batch?symbols=aapl,fb,goog&types=quote,chart&range=1m&last=1&token=Tpk_1c095a89eeea47339f8f9b530276818d";
+			String url="https://cloud.iexapis.com/stable/stock/market/batch?symbols="+stockSymbol+"&types=quote&filter=open,close,symbol,change,low,high,latestPrice,changePercent,week52High,week52Low,primaryExchange&token=pk_f2ef8ff533a14e56994e437f4da5cc2a";
 			
 			//Calling API
-			ResponseEntity<String> responseEntity = new RestTemplate().getForEntity(url, String.class);
+			ResponseEntity<Map> responseEntity = new RestTemplate().getForEntity(url, Map.class);
 			
 			//Casting it into java object
-			Map<String, StockResponseDTO> map = new ObjectMapper().readValue(responseEntity.getBody(), Map.class);
+			SingleStockDTO map = new ObjectMapper().readValue(new JSONObject(responseEntity.getBody()).getJSONObject(stockSymbol.toUpperCase()).getJSONObject("quote").toString(), SingleStockDTO.class);
 		
-			
+			return map;
 		} catch (IOException e) {
-			logger.info(">>>>>>>>>>>> EXCEPTION >>>>>>>>> :: fetchDataFromSandboxAPI :: ");
+			logger.info(">>>>>>>>>>>> EXCEPTION >>>>>>>>> :: fetchStockInfo :: ");
 			logger.info(">>>>>>>>>>>> MESSAGE >>>>>>>>> "+ e.getLocalizedMessage());
 			logger.info(">>>>>>>>>>>> END");
 			e.printStackTrace();
+			return null;
 		}
 		
 	}
 	
-	public static void main(String[] args) {
-		new DemoAPICall().fetchDataFromSanboxAPI();
-	}
+//	public static void main(String[] args) {
+//		new DemoAPICall().fetchDataFromSanboxAPI();
+//	}
 	
 }
