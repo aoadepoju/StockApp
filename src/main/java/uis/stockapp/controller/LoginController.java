@@ -106,11 +106,22 @@ public class LoginController {
         });
         timeline.play();
     }
-    public void loginUser() {
+    public void loginUser() throws IOException {
     	if(userName != null && password != null) {
-    		
+    		FXMLLoader loader = null;
+    		Parent root =null;
     		if(userRepository.findByUserNameAndPassword(userName.getText(), password.getText()) !=null ) {
-    			errorMessage.setText("Login Successfully");
+    			
+    			Stage mStage = (Stage) anchorRoot.getScene().getWindow();
+    			mStage.close();
+    			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/uis/stockapp/view/MainConsole.fxml"));
+    			fxmlLoader.setControllerFactory(springContext::getBean);
+    		    Parent root1 = (Parent) fxmlLoader.load();
+    		    Stage stage = new Stage();
+    	    	
+    		    stage.setScene(new Scene(root1));  
+    		    stage.show();
+    	    	
     		}
     		else
     			errorMessage.setText("Wrong Username Or Password");
