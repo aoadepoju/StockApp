@@ -14,63 +14,72 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="parentContainer" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="uis.stockapp.controller.RegisterController">
+<StackPane fx:id="parentContainer" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="uis.stockapp.controller.LoginController">
   <children>
-    <AnchorPane fx:id="anchorRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="310.0" style="-fx-background-color: #2c344b;">
+    <AnchorPane fx:id="anchorRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="312.0" style="-fx-background-color: #2c344b;">
       <children>
-        <AnchorPane layoutY="419.0" prefHeight="48.0" prefWidth="310.0" style="-fx-background-color: #43bb73;">
+        <AnchorPane layoutY="419.0" prefHeight="48.0" prefWidth="312.0" style="-fx-background-color: #43bb73;">
           <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="0.0" onMouseClicked="#registerUser" prefHeight="48.0" prefWidth="301.0" style="-fx-cursor: hand;" text="Register" textAlignment="LEFT">
+            <Label id="mainButton" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="0.0" maxWidth="312.0" onMouseClicked="#loginUser" prefHeight="48.0" prefWidth="312.0" style="-fx-cursor: hand;" text="Login" textAlignment="LEFT">
               <font>
-                <Font size="17.0" fx:id="x6" />
+                <Font size="17.0" fx:id="x5" />
               </font>
               <textFill>
-                <Color blue="0.996" green="0.996" red="0.996" fx:id="x2" />
+                <Color blue="0.996" green="0.996" red="0.996" fx:id="x6" />
               </textFill>
             </Label>
           </children>
         </AnchorPane>
-        <TextField fx:id="firstName" layoutX="21.0" layoutY="97.0" prefHeight="42.0" prefWidth="119.0" promptText="Firstname" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
-        <TextField fx:id="lastName" layoutX="167.0" layoutY="97.0" prefHeight="42.0" prefWidth="119.0" promptText="Lastname" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
-        <TextField fx:id="userName" layoutX="21.0" layoutY="167.0" prefHeight="42.0" prefWidth="270.0" promptText="your@email.com" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
-        <PasswordField fx:id="password" layoutX="19.0" layoutY="234.0" prefHeight="42.0" prefWidth="270.0" promptText="Password" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
-        <TextField id="userName" fx:id="accountBalance" layoutX="21.0" layoutY="301.0" prefHeight="42.0" prefWidth="270.0" promptText="0" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
-        <Label fx:id="button" alignment="CENTER" contentDisplay="LEFT" layoutX="0.0" layoutY="392.0" onMouseClicked="#fadeIn" prefWidth="310.0" style="-fx-cursor: hand;&#10;-fx-underline: true;" text="Back To Login" wrapText="false">
-          <font>
-            <Font size="14.0" fx:id="x4" />
-          </font>
-          <textFill>
-            <Color blue="0.451" green="0.733" red="0.263" fx:id="x1" />
-          </textFill>
-        </Label>
-        <Label alignment="CENTER" layoutX="75.0" layoutY="3.0" prefHeight="62.0" prefWidth="92.0" text="Stock">
+        <AnchorPane prefHeight="48.0" prefWidth="310.0" style="-fx-background-color: #2e354f;">
+          <children>
+            <Label layoutX="131.0" layoutY="14.0" text="StockWorld">
+              <font>
+                <Font size="14.0" fx:id="x1" />
+              </font>
+              <textFill>
+                <Color blue="0.702" green="0.565" red="0.549" fx:id="x2" />
+              </textFill>
+            </Label>
+            <Label alignment="CENTER" layoutX="258.0" layoutY="2.0" minHeight="25.0" onMouseClicked="#exit" prefHeight="41.999900000002526" prefWidth="53.0" style="-fx-cursor: hand;" text="X" textFill="#8c90b3">
+              <font>
+                <Font name="Century Gothic" size="20.0" />
+              </font>
+            </Label>
+          </children>
+        </AnchorPane>
+        <Label id="login" fx:id="mainButton" font="$x1" layoutX="89.0" layoutY="379.0" onMouseClicked="#fadeIn" style="-fx-cursor: hand;" text="or Create new profile" textFill="$x2" wrapText="false" />
+        <Label alignment="CENTER" layoutX="75.0" layoutY="58.0" prefHeight="62.0" prefWidth="92.0" text="Stock" textFill="$x2">
           <font>
             <Font name="Century Gothic Bold" size="25.0" />
           </font>
-          <textFill>
-            <Color blue="0.702" green="0.565" red="0.549" fx:id="x5" />
-          </textFill>
         </Label>
-        <Label alignment="CENTER" layoutX="147.0" layoutY="3.0" prefHeight="62.0" prefWidth="91.99990000000253" text="World" textFill="$x5">
+        <Label alignment="CENTER" layoutX="147.0" layoutY="58.0" prefHeight="62.0" prefWidth="91.99990000000253" text="World" textFill="$x2">
           <font>
             <Font name="Century Gothic" size="25.0" />
           </font>
         </Label>
-        <Label alignment="CENTER_RIGHT" layoutX="75.0" layoutY="42.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Trade your stock with us" textFill="$x1">
+        <Label alignment="CENTER_RIGHT" layoutX="75.0" layoutY="97.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Trade your stock with us">
           <font>
             <Font name="Century Gothic" size="9.0" />
           </font>
+          <textFill>
+            <Color blue="0.451" green="0.733" red="0.263" fx:id="x3" />
+          </textFill>
         </Label>
-        <Label alignment="CENTER_LEFT" layoutX="21.0" layoutY="73.0" minHeight="24.0" prefHeight="24.0" prefWidth="119.0" style="" text="First Name" textFill="$x1">
+        <TextField id="lastName" fx:id="userName" layoutX="20.0" layoutY="197.0" prefHeight="42.0" prefWidth="270.0" promptText="youemail@stock.com" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
+        <Label alignment="CENTER_LEFT" layoutX="20.0" layoutY="166.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Username" textFill="$x3">
           <font>
-            <Font name="Century Gothic" size="12.0" fx:id="x9" />
+            <Font name="Century Gothic" size="12.0" fx:id="x4" />
           </font>
         </Label>
-        <Label alignment="CENTER_LEFT" font="$x9" layoutX="21.0" layoutY="210.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Password" textFill="$x1" />
-        <Label alignment="CENTER_LEFT" font="$x9" layoutX="167.0" layoutY="72.0" minHeight="24.0" prefHeight="24.000099999997474" prefWidth="119.0" style="" text="Last Name" textFill="$x1" />
-        <Label alignment="CENTER_LEFT" font="$x9" layoutX="21.0" layoutY="143.0" minHeight="24.0" prefHeight="24.0" prefWidth="119.0" style="" text="Username" textFill="$x1" />
-        <Label alignment="CENTER_LEFT" font="$x9" layoutX="23.0" layoutY="277.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Account Balance" textFill="$x1" />
-        <Label fx:id="errorMessage" alignment="CENTER" contentDisplay="CENTER" font="$x6" layoutX="0.0" layoutY="350.0" minHeight="19.0" prefHeight="24.0" prefWidth="301.0" style="-fx-cursor: hand;" text="" textAlignment="LEFT" textFill="$x2" />
+        <Label alignment="CENTER_LEFT" font="$x4" layoutX="21.0" layoutY="253.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Password" textFill="$x3" />
+        <PasswordField fx:id="password" layoutX="19.0" layoutY="277.0" onKeyPressed="#log" prefHeight="42.0" prefWidth="270.0" promptText="Password" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
+        <Label fx:id="errorMessage" alignment="CENTER" contentDisplay="CENTER" font="$x5" layoutX="5.0" layoutY="353.0" minHeight="19.0" prefHeight="24.0" prefWidth="301.0" style="-fx-cursor: hand;" text="" textAlignment="LEFT" textFill="$x6" />
+        <Label id="button" fx:id="forgotPassword" alignment="CENTER" contentDisplay="LEFT" layoutX="61.0" layoutY="323.0" onMouseClicked="#fadeInForgotEmail" prefHeight="24.0" prefWidth="178.0" style="-fx-cursor: hand;&#10;-fx-underline: true;" text="Click Here To Reset Password" textFill="#43bb73" wrapText="false">
+          <font>
+            <Font size="13.0" />
+          </font>
+        </Label>
       </children>
     </AnchorPane>
   </children>

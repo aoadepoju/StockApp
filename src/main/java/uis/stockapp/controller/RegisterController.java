@@ -79,7 +79,7 @@ public class RegisterController {
     	FXMLLoader loader = null;
        
 	   	Parent root =null;
-	   	loader = new FXMLLoader(getClass().getResource("/uis/stockapp/view/LoginFrame.fxml"));
+	   	loader = new FXMLLoader(getClass().getResource("/uis/stockapp/view/Login.fxml"));
 	   	
 	   	 loader.setControllerFactory(springContext::getBean);
 	   	 root=loader.load();
@@ -103,22 +103,28 @@ public class RegisterController {
 	       timeline.play();
    }
    public void registerUser() {
-	   	if(!userName.getText().isEmpty() && !password.getText().isEmpty() && !lastName.getText().isEmpty() && !firstName.getText().isEmpty() && !accountBalance.getText().equals("0")) {
-	   		if(userRepository.findByUserName(userName.getText()) == null) {
-		   		
-		   		User user=new User();
-//		   		user.setUserId(0);
-		   		user.setFirstName(firstName.getText());
-		   		user.setLastName(lastName.getText());
-		   		user.setPassword(password.getText());
-		   		user.setUserName(userName.getText());
-		   		
-		   		userRepository.save(user);
-		   		errorMessage.setText("User Registered");
-	   		}
-	   		else errorMessage.setText("Username Already Exists");
-	   	}
-	   	else errorMessage.setText("Fill all the feilds");
+	   try {
+		   	if(!userName.getText().isEmpty() && !password.getText().isEmpty() && !lastName.getText().isEmpty() && !firstName.getText().isEmpty() && !accountBalance.getText().equals("0")) {
+		   		if(userRepository.findByUserName(userName.getText()) == null) {
+			   		
+			   		User user=new User();
+	//		   		user.setUserId(0);
+			   		user.setFirstName(firstName.getText());
+			   		user.setLastName(lastName.getText());
+			   		user.setPassword(password.getText());
+			   		user.setUserName(userName.getText());
+			   		user.setCurrentBalance(Double.parseDouble(accountBalance.getText()));
+			   		userRepository.save(user);
+			   		errorMessage.setText("User Registered");
+		   		}
+		   		else errorMessage.setText("Username Already Exists");
+		   	}
+		   	else errorMessage.setText("Fill all the feilds");
+	   }catch (Exception e) {
+		   errorMessage.setText("Make sure you fill all feild's correctly");
+	   }
    }
-
+   public void exit() {
+		System.exit(1);
+   }
 }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="529.0" prefWidth="310.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="uis.stockapp.controller.SellStockController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="0.0" layoutY="2.0" minHeight="77.0" prefHeight="77.0" prefWidth="310.0">
+      <children>
+        <Label alignment="CENTER" layoutX="257.0" layoutY="0.0" minHeight="25.0" onMouseClicked="#exit" prefHeight="41.999900000002526" prefWidth="53.0" style="-fx-cursor: hand;" text="X">
+          <font>
+            <Font name="Century Gothic" size="20.0" />
+          </font>
+          <textFill>
+            <Color blue="0.702" green="0.565" red="0.549" fx:id="x7" />
+          </textFill>
+        </Label>
+        <Label alignment="CENTER_RIGHT" layoutX="73.0" layoutY="39.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Trade your stock with us">
+          <font>
+            <Font name="Century Gothic" size="9.0" />
+          </font>
+          <textFill>
+            <Color blue="0.451" green="0.733" red="0.263" fx:id="x3" />
+          </textFill>
+        </Label>
+        <Label alignment="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="36.0" prefWidth="92.0" text="Stock" textFill="$x7">
+          <font>
+            <Font name="Century Gothic Bold" size="25.0" fx:id="x2" />
+          </font>
+        </Label>
+        <Label alignment="CENTER" layoutX="145.0" layoutY="14.0" prefHeight="36.0" prefWidth="92.0" text="World" textFill="$x7">
+          <font>
+            <Font name="Century Gothic" size="25.0" />
+          </font>
+        </Label>
+      </children>
+    </AnchorPane>
+    <TextField id="userName" fx:id="pricePurchased" disable="false" editable="false" layoutX="20.0" layoutY="237.0" prefHeight="36.0" prefWidth="111.0" promptText="0" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
+    <Label fx:id="symbol" alignment="CENTER" layoutX="0.0" layoutY="79.0" prefHeight="57.0" prefWidth="310.0" style="-fx-background-color: #43bb73;" text="Apple (APPL)" textFill="WHITE">
+      <effect>
+        <InnerShadow blurType="TWO_PASS_BOX" />
+      </effect>
+      <font>
+        <Font name="Century Gothic Bold" size="19.0" />
+      </font>
+    </Label>
+    <Label alignment="CENTER_LEFT" layoutX="22.0" layoutY="210.0" minHeight="24.0" prefHeight="24.0" prefWidth="123.0" style="" text="Price Purchased For" textFill="$x3">
+      <font>
+        <Font name="Century Gothic" size="12.0" fx:id="x4" />
+      </font>
+    </Label>
+    <TextField id="userName" fx:id="shares" disable="false" editable="false" layoutX="20.0" layoutY="171.0" prefHeight="36.0" prefWidth="111.0" promptText="0" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
+    <Label alignment="CENTER_LEFT" layoutX="22.0" layoutY="144.0" minHeight="24.0" prefHeight="24.0" prefWidth="111.0" style="" text="Avaliable Shares" textFill="$x3">
+      <font>
+        <Font name="Century Gothic" size="11.0" fx:id="x5" />
+      </font>
+    </Label>
+    <TextField id="userName" fx:id="total" disable="false" editable="false" layoutX="20.0" layoutY="307.0" prefHeight="36.0" prefWidth="270.0" promptText="0" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="0$" />
+    <Label alignment="CENTER_LEFT" font="$x4" layoutX="22.0" layoutY="280.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Total Amount" textFill="$x3" />
+    <TextField id="userName" fx:id="balance" disable="false" editable="false" layoutX="20.0" layoutY="378.0" prefHeight="36.0" prefWidth="270.0" promptText="0" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="0$" />
+    <Label alignment="CENTER_LEFT" font="$x4" layoutX="22.0" layoutY="351.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Balance After Purchase" textFill="$x3" />
+    <Label id="mainButton" fx:id="buyStock" alignment="CENTER" contentDisplay="CENTER" layoutX="0.0" layoutY="493.0" maxWidth="363.0" onMouseClicked="#sellStock" prefHeight="36.0" prefWidth="310.0" style="-fx-cursor: hand;&#10;-fx-background-color: #43bb73;" text="Sell Stock" textAlignment="LEFT" textFill="#fefefe">
+      <font>
+        <Font size="17.0" />
+      </font>
+    </Label>
+    <TextField id="userName" fx:id="sellShare" disable="false" editable="true" layoutY="171.0" onKeyReleased="#update" prefHeight="36.0" prefWidth="111.0" promptText="0" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" AnchorPane.leftAnchor="177.0" />
+    <Label alignment="CENTER_LEFT" font="$x5" layoutX="179.0" layoutY="144.0" minHeight="24.0" prefHeight="24.0" prefWidth="111.0" style="" text="Shares to sell" textFill="$x3" />
+    <TextField id="userName" fx:id="currentPrice" disable="false" editable="false" layoutX="176.0" layoutY="240.0" prefHeight="36.0" prefWidth="111.0" promptText="0" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
+    <Label alignment="CENTER_LEFT" font="$x4" layoutX="178.0" layoutY="213.0" minHeight="24.0" prefHeight="24.0" prefWidth="109.0" style="" text="Current Price" textFill="$x3" />
+    <TextField id="userName" fx:id="profit" alignment="CENTER" disable="false" editable="false" layoutX="20.0" layoutY="442.0" prefHeight="42.0" prefWidth="270.0" promptText="0" style="-fx-text-fill:#43bb73;&#10;-fx-border-radius: 2;&#10;-fx-background-color: transparent;&#10;-fx-font-size:20px;&#10;-fx-font-weight:bold;&#10;" text="0.00$" />
+    <Label alignment="CENTER" layoutX="22.0" layoutY="418.0" minHeight="24.0" prefHeight="36.0" prefWidth="265.0" style="" text="Profit Earned" textFill="$x3">
+      <font>
+        <Font name="Century Gothic Bold" size="16.0" />
+      </font>
+    </Label>
+  </children>
+</AnchorPane>

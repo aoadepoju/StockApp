@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="parentContainer" minWidth="270.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="uis.stockapp.controller.UserInfoController">
+  <children>
+    <AnchorPane fx:id="anchorRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="310.0" style="-fx-background-color: #2c344b;">
+      <children>
+        <PasswordField id="password" fx:id="oldPassword" layoutX="19.0" layoutY="118.0" prefHeight="42.0" prefWidth="270.0" promptText="Password" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
+        <TextField id="userName" fx:id="accountBalance" layoutX="21.0" layoutY="297.0" prefHeight="36.0" prefWidth="270.0" promptText="0" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
+        <Label id="button" fx:id="errorMessage" alignment="CENTER" contentDisplay="LEFT" layoutX="0.0" layoutY="377.0" prefHeight="24.0" prefWidth="312.0" style="" text="" wrapText="false">
+          <font>
+            <Font size="14.0" fx:id="x4" />
+          </font>
+          <textFill>
+            <Color blue="0.451" green="0.733" red="0.263" fx:id="x1" />
+          </textFill>
+        </Label>
+        <Label alignment="CENTER" layoutX="75.0" layoutY="3.0" prefHeight="62.0" prefWidth="92.0" text="Stock">
+          <font>
+            <Font name="Century Gothic Bold" size="25.0" />
+          </font>
+          <textFill>
+            <Color blue="0.702" green="0.565" red="0.549" fx:id="x5" />
+          </textFill>
+        </Label>
+        <Label alignment="CENTER" layoutX="147.0" layoutY="3.0" prefHeight="62.0" prefWidth="91.99990000000253" text="World" textFill="$x5">
+          <font>
+            <Font name="Century Gothic" size="25.0" />
+          </font>
+        </Label>
+        <Label alignment="CENTER_RIGHT" layoutX="75.0" layoutY="42.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Trade your stock with us" textFill="$x1">
+          <font>
+            <Font name="Century Gothic" size="9.0" />
+          </font>
+        </Label>
+        <Label alignment="CENTER_LEFT" layoutX="21.0" layoutY="94.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Old Password" textFill="$x1">
+          <font>
+            <Font name="Century Gothic" size="12.0" fx:id="x9" />
+          </font>
+        </Label>
+        <Label alignment="CENTER_LEFT" font="$x9" layoutX="23.0" layoutY="270.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="Account Balance" textFill="$x1" />
+        <PasswordField id="password" fx:id="newPassword" layoutX="19.0" layoutY="188.0" prefHeight="42.0" prefWidth="270.0" promptText="Password" style="-fx-border-color: #8c90b3;&#10;-fx-text-fill:#8c90b3;&#10; -fx-border-radius: 2;&#10; -fx-background-color: transparent;&#10;" text="" />
+        <Label alignment="CENTER_LEFT" font="$x9" layoutX="21.0" layoutY="164.0" minHeight="24.0" prefHeight="24.0" prefWidth="150.0" style="" text="New Password" textFill="#43bb73" />
+        <Label id="mainButton" alignment="CENTER" contentDisplay="CENTER" layoutX="162.0" layoutY="241.0" maxWidth="363.0" onMouseClicked="#updatePassword" prefHeight="24.0" prefWidth="126.0" style="-fx-cursor: hand;&#10;-fx-background-color: #43bb73;" text="Update Password" textAlignment="LEFT">
+          <font>
+            <Font size="12.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color blue="0.996" green="0.996" red="0.996" fx:id="x2" />
+          </textFill>
+        </Label>
+        <Label id="mainButton" alignment="CENTER" contentDisplay="CENTER" layoutX="0.0" layoutY="404.0" maxWidth="363.0" onMouseClicked="#exit" prefHeight="36.0" prefWidth="310.0" style="-fx-cursor: hand;&#10;-fx-background-color: #43bb73;" text="Cancel" textAlignment="LEFT" textFill="$x2">
+          <font>
+            <Font size="17.0" />
+          </font>
+        </Label>
+        <Label id="mainButton" alignment="CENTER" contentDisplay="CENTER" font="$x3" layoutX="159.0" layoutY="341.0" maxWidth="363.0" onMouseClicked="#updateBalance" prefHeight="24.0" prefWidth="132.0" style="-fx-cursor: hand;&#10;-fx-background-color: #43bb73;" text="Update Balance" textAlignment="LEFT" textFill="$x2" />
+        <Label alignment="CENTER" layoutX="255.0" layoutY="0.0" minHeight="25.0" onMouseClicked="#exit" prefHeight="34.0" prefWidth="55.0" style="-fx-cursor: hand;" text="X" textFill="#8c90b3">
+          <font>
+            <Font name="Century Gothic" size="20.0" />
+          </font>
+        </Label>
+      </children>
+    </AnchorPane>
+  </children>
+  <effect>
+    <DropShadow />
+  </effect>
+</StackPane>

@@ -5,10 +5,10 @@ public class SingleStockDTO {
 	 private String open = null;
 	 private String close = null;
 	 private String symbol;
-	 private float change;
+	 private Double change;
 	 private String low = null;
 	 private String high = null;
-	 private float latestPrice;
+	 private Double latestPrice;
 	 private float changePercent;
 	 private float week52High;
 	 private float week52Low;
@@ -29,7 +29,7 @@ public class SingleStockDTO {
 	  return symbol;
 	 }
 
-	 public float getChange() {
+	 public Double getChange() {
 	  return change;
 	 }
 
@@ -41,7 +41,7 @@ public class SingleStockDTO {
 	  return high;
 	 }
 
-	 public float getLatestPrice() {
+	 public Double getLatestPrice() {
 	  return latestPrice;
 	 }
 
@@ -75,7 +75,7 @@ public class SingleStockDTO {
 	  this.symbol = symbol;
 	 }
 
-	 public void setChange(float change) {
+	 public void setChange(Double change) {
 	  this.change = change;
 	 }
 
@@ -87,7 +87,7 @@ public class SingleStockDTO {
 	  this.high = high;
 	 }
 
-	 public void setLatestPrice(float latestPrice) {
+	 public void setLatestPrice(Double latestPrice) {
 	  this.latestPrice = latestPrice;
 	 }
 

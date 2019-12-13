@@ -27,7 +27,10 @@ public class User {
 	
 	@Column(name = "PASSWORD")
 	private String password;
-
+	
+	@Column(name = "BALANCE")
+	private Double currentBalance;
+	
 	public Integer getUserId() {
 		return userId;
 	}
@@ -66,6 +69,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Double getCurrentBalance() {
+		return currentBalance;
+	}
+
+	public void setCurrentBalance(Double currentBalance) {
+		this.currentBalance = currentBalance;
 	}
 	
 	
